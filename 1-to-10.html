@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Srisakdi&display=swap');
+			body{
+				font-family: 'Srisakdi', cursive;
+
+			}
+			</style>
+		</head>
+<body>
+	<b></b>
+	<table>
+		<tbody>
+		<tr>
+		<td><font size="5"><b><i>มี สิบ เจ้า จ่ง แบ่ง เปน กุศลบุญ หนึ่ง ส่วน</i></b> / เจ้า มี : <input type="number" id="number" style="font-size:30px;width:150px;height:40px"> บาท </font><button class="cal" onsubmit="cal()" style="font-size:24px">คำนวณ</button></td>
+		<td><b><div id="result"></div></b></td>
+		</tr>
+		</tbody>
+		</table>
+	
+
+      
+
+	  <script>
+		  function cal() {
+			get = document.getElementById("number").value
+			result = get / 10
+			document.getElementById('result').innerHTML = '=> ให้ เจ้า แบ่ง <font size = \'5\' style=\'user-select: all; cursor: pointer;\'>' + result + '</font></u> บาท'
+		  }
+		  document.querySelector('.cal').addEventListener("click", ()=>cal())
+	  </script>
+	  </body>
+	  </html>
