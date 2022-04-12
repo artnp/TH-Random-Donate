@@ -10,24 +10,57 @@
 			</style>
 		</head>
 <body>
-	<b></b>
+<center>
 	<table>
 		<tbody>
 		<tr>
-		<td><font size="5"><b><i>มี สิบ เจ้า จ่ง แบ่ง เปน กุศลบุญ หนึ่ง ส่วน</i></b> / เจ้า มี : <input type="number" id="number" style="font-size:30px;width:150px;height:40px"> บาท </font><button class="cal" onsubmit="cal()" style="font-size:24px">คำนวณ</button></td>
-		<td><b><div id="result"></div></b></td>
+		<td><font size="5"><b><i>มี สิบ เจ้า จ่ง แบ่ง เปน กุศลบุญ หนึ่ง ส่วน</i></b> / เจ้า มี : <input type="number" id="number" style="font-size:30px;width:150px;height:30px;background-color:rgb(255, 190, 179);"> บาท </font><button class="cal" onsubmit="cal()" style="font-size:24px">คำนวณ</button></td>
+		<td><b></b></td>
 		</tr>
 		</tbody>
 		</table>
-	
-
-      
+		<font size="5">วันเกิด: <input type="number" id="dob" class="dob" style="font-size:25px;width:55px;height:30px"> เดือนเกิด: <input type="number" id="mob" class="mob" style="font-size:25px;width:50px;height:30px"> พ.ศ.เกิด <input type="number" id="yob" class="yob" style="font-size:25px;width:90px;height:30px"> ◘ วันนี้: <input type="number" id="d" class="d" style="font-size:25px;width:55px;height:30px"> เดือน: <input type="number" id="m" class="m" style="font-size:25px;width:50px;height:30px"> พ.ศ. <input type="number" id="y" class="y" style="font-size:25px;width:90px;height:30px"></font>
+<br><div id="result"></div>
+      </center>
 
 	  <script>
+		  document.querySelector('.d').value = new Date().getDate()
+			document.querySelector('.m').value = new Date().getMonth() + 1
+			document.querySelector('.y').value = (new Date().getFullYear()) + 543
+
+			document.querySelector('.dob').value = localStorage.getItem("dateOfBirth")
+			document.querySelector('.mob').value = localStorage.getItem("MonthOfBirth")
+			document.querySelector('.yob').value = localStorage.getItem("YearOfBirth")
+
+
+ 
 		  function cal() {
+
+	
+
 			get = document.getElementById("number").value
-			result = get / 10
-			document.getElementById('result').innerHTML = '=> ให้ เจ้า แบ่ง <font size = \'5\' style=\'user-select: all; cursor: pointer;\'>' + result + '</font></u> บาท'
+			dob = Number(document.getElementById("dob").value)
+			mob = Number(document.getElementById("mob").value)
+			yob = Number(document.getElementById("yob").value)
+			yob543 = yob - 543
+			localStorage.setItem("dateOfBirth", dob)
+			localStorage.setItem("MonthOfBirth", mob)
+			localStorage.setItem("YearOfBirth", yob)
+
+			d = Number(document.getElementById("d").value)
+			m = Number(document.getElementById("m").value)
+			y = Number(document.getElementById("y").value) - 543
+
+	
+			blucky = (dob + mob) + Number(String(yob543)[0]) + Number(String(yob543)[1]) +  Number(String(yob543)[2]) +  Number(String(yob543)[3])
+			blucky2 = Number(String(blucky)[0]) + Number(String(blucky)[1])
+
+			nlucky = (d + m ) + Number(String(y)[0]) + Number(String(y)[1]) + Number(String(y)[2]) + Number(String(y)[3])
+			nlucky2 = Number(String(nlucky)[0]) + Number(String(nlucky)[1])
+	
+
+			result = (get / 10) + (String(blucky2) + String(nlucky2)) / 100
+			document.getElementById('result').innerHTML = '<p style=\'border:2px solid red;\'><font size=\'5\'> => ให้ เจ้า แบ่ง ทำ บุญ <b><u><font size = \'6\' style=\'user-select: all; cursor: pointer;\'>' + result + '</font></u></b> บาท</font><p>'
 		  }
 		  document.querySelector('.cal').addEventListener("click", ()=>cal())
 	  </script>

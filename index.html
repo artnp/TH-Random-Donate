@@ -13,10 +13,10 @@
 		</head>
 <body>
 <center>
-	<iframe src="1-to-10.html" width="900" height="63" frameBorder="0"></iframe>
-	<h4><div id='DiviveNumber'></div></h4>
+	<iframe src="1-to-10.html" width="900" height="157" frameBorder="0"></iframe>
+	<!-- <h4><div id='DiviveNumber'></div></h4> -->
 	<div id='DonationRandom'></div>
-	<font size='3'>- - - ข้อมูล qr code นี้มาจากโปรเจค ปิ๊บทำบุญ (E-Donation) ของ KBank - - -</font><br><a href='https://www.youtube.com/watch?v=d79n2W_qPs0'>Youtube Qr code</a></center>
+	<font size='3'>- - - ข้อมูล qr code นี้มาจากโปรเจค ปิ๊บทำบุญ (E-Donation) ของ KBank - - -</font></center>
 <script>
 
 DiviveNumber = Math.floor(Math.random() * 391)
@@ -179,7 +179,7 @@ DiviveNumber = Math.floor(Math.random() * 391)
 
 Donate = "<img src='https://www.kasikornbank.com/SiteCollectionDocuments/promotion/e-donation/img/qr/donation-list-" + DiviveNumber + ".png' width='26%'/>";
 		document.getElementById('DonationRandom').innerHTML=Donate;
-		document.getElementById('DiviveNumber').innerHTML="เลขสุ่มค่า: [<font color='green' style='user-select: all; cursor: pointer;'>" + DiviveNumber + "</font>]";
+		// document.getElementById('DiviveNumber').innerHTML="เลขสุ่มค่า: [<font color='green' style='user-select: all; cursor: pointer;'>" + DiviveNumber + "</font>]";
 		
 
 </script>
