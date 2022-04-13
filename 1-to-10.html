@@ -20,7 +20,27 @@
 		</tbody>
 		</table>
 		<font size="5">วันเกิด: <input type="number" id="dob" class="dob" style="font-size:25px;width:55px;height:30px"> เดือนเกิด: <input type="number" id="mob" class="mob" style="font-size:25px;width:50px;height:30px"> พ.ศ.เกิด <input type="number" id="yob" class="yob" style="font-size:25px;width:90px;height:30px"> ◘ วันนี้: <input type="number" id="d" class="d" style="font-size:25px;width:55px;height:30px"> เดือน: <input type="number" id="m" class="m" style="font-size:25px;width:50px;height:30px"> พ.ศ. <input type="number" id="y" class="y" style="font-size:25px;width:90px;height:30px"></font>
-<br><div id="result"></div>
+		<br><br> 
+		<font size="4">
+		<input type="radio"  name="wish" id="luck" value="0.07">  
+		<label ><b><abbr title="23091908 1305 12210311">ขอ ให้ โชค ดี</abbr></b></label> ||
+		
+		<input type="radio" name="wish" id="rich" value="0.7">
+		<label><b><abbr title="23091908 1305 18090308">ขอ ให้ มั่ง มี</abbr></b></label> ||
+
+		<input type="radio" name="wish" id="healthy" value="0.75">
+		<label><b><abbr title="23091908 1305 08050112200825">ขอ ให้ ไร้ โรคา</abbr></b></label> ||
+		
+		<input type="radio" name="wish" id="livelong" value="0.11">
+		<label><b><abbr title="23091908 1305 12092205 12151407">ขอ ให้ อายุ ยืน</abbr></b></label> ||
+		
+		<input type="radio" name="wish" id="world" value="0.007">
+		<label><b><abbr title="23091908 1908011805 2015 200805 2315181204">ส่ง บุญ ให้ ทั้ง โลก</abbr></b></label> ||
+
+		<input type="radio" name="wish" id="universe" value="0.138">
+		<label><b><abbr title="23091908 1908011805 2015 200805 2114092205181905">ส่ง บุญ ให้ ทั้ง จักรวาล</abbr></b></label>
+	</font>
+		<br><div id="result"></div>
       </center>
 
 	  <script>
@@ -36,7 +56,23 @@
  
 		  function cal() {
 
-	
+			wish = 0
+
+			if (document.getElementById('luck').checked) {
+  			wish = document.getElementById('luck').value;
+			} else if (document.getElementById('rich').checked) {
+  			wish = document.getElementById('rich').value;
+			} else if (document.getElementById('healthy').checked) {
+  			wish = document.getElementById('healthy').value;
+			} else if (document.getElementById('livelong').checked) {
+  			wish = document.getElementById('livelong').value;
+			} else if (document.getElementById('world').checked) {
+  			wish = document.getElementById('world').value;
+			} else if (document.getElementById('universe').checked) {
+  			wish = document.getElementById('universe').value;
+			}
+
+			
 
 			get = document.getElementById("number").value
 			dob = Number(document.getElementById("dob").value)
@@ -54,12 +90,10 @@
 	
 			blucky = (dob + mob) + Number(String(yob543)[0]) + Number(String(yob543)[1]) +  Number(String(yob543)[2]) +  Number(String(yob543)[3])
 			blucky2 = Number(String(blucky)[0]) + Number(String(blucky)[1])
-
 			nlucky = (d + m ) + Number(String(y)[0]) + Number(String(y)[1]) + Number(String(y)[2]) + Number(String(y)[3])
 			nlucky2 = Number(String(nlucky)[0]) + Number(String(nlucky)[1])
-	
 
-			result = (get / 10) + (String(blucky2) + String(nlucky2)) / 100
+			result = (((get / 10) + (String(blucky2) + String(nlucky2)) / 100) + Number(wish)).toFixed(2)
 			document.getElementById('result').innerHTML = '<p style=\'border:2px solid red;\'><font size=\'5\'> => ให้ เจ้า แบ่ง ทำ บุญ <b><u><font size = \'6\' style=\'user-select: all; cursor: pointer;\'>' + result + '</font></u></b> บาท</font><p>'
 		  }
 		  document.querySelector('.cal').addEventListener("click", ()=>cal())
