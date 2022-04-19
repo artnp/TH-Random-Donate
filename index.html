@@ -13,9 +13,25 @@
 		</head>
 <body>
 <center>
+	
 	<iframe src="1-to-10.html" width="900" height="195" frameBorder="0"></iframe>
-	<!-- <h4><div id='DiviveNumber'></div></h4> -->
-	<div id='DonationRandom'></div>
+
+	<table border="0" >
+		<tbody>
+		<tr>
+		<td><center><b>☉</b></center></td>
+		<td></td>
+		<td><center><b>☾</b></center></td>
+		</tr>
+		<tr>
+		<td><center><div id='DonationRandom'></div></center></td>
+		<td> ===> </td>
+		<td><script src="https://widgets.coingecko.com/coingecko-random-coin-widget.js"></script>
+			<coingecko-random-coin-widget  locale="th" width="0"></coingecko-random-coin-widget></td>
+		</tr>
+		</tbody>
+		</table>
+	
 	<font size='3'>- - - ข้อมูล qr code นี้มาจากโปรเจค ปิ๊บทำบุญ (E-Donation) ของ KBank - - -</font></center>
 <script>
 
@@ -100,8 +116,8 @@ if (DiviveNumber === 180 ||
 	location.reload()
 }
 
-Donate = "<img src='https://www.kasikornbank.com/SiteCollectionDocuments/promotion/e-donation/img/qr/donation-list-" + DiviveNumber + ".png' width='24%'/>";
-		document.getElementById('DonationRandom').innerHTML=Donate;
+Donate = "<img src='https://www.kasikornbank.com/SiteCollectionDocuments/promotion/e-donation/img/qr/donation-list-" + DiviveNumber + ".png' width='400'/>";
+		document.getElementById('DonationRandom').innerHTML=Donate
 		// document.getElementById('DiviveNumber').innerHTML="เลขสุ่มค่า: [<font color='green' style='user-select: all; cursor: pointer;'>" + DiviveNumber + "</font>]";
 		
 
