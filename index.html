@@ -5,6 +5,30 @@
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@100;200&family=Kanit:ital,wght@1,900&display=swap" rel="stylesheet">
 		<title>Random ทำบุญ qr Code Scanner</title>
 		<style>
+			      .black-box {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .flashing-bar {
+    width: 10px;
+    height: 15px;
+    background-color: white;
+	position: absolute;
+    animation: flashing 1.5s infinite;
+  }
+
+  @keyframes flashing {
+    0%, 49% {
+      opacity: 0;
+    }
+    50%, 100% {
+      opacity: 1;
+    }
+  }
 			body{
 				font-family: 'IBM Plex Sans Thai Looped', sans-serif;
 			}
@@ -12,6 +36,9 @@
 		</head>
 <body>
 <center>
+	<div class="black-box"><center>
+<div class="flashing-bar"></div><i>สุ่มสถานที่สร้างบุญ -ผูกวันเกิดพ่วงวันสร้างบุญ > เม็ดใช้เงินสร้างบุญ</i>
+</center></div>
 	<hr>
 	<iframe src="1-to-10.html" width="100%" height="160" frameBorder="0"></iframe>
 
